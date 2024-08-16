@@ -1,0 +1,41 @@
+from tkinter import*
+import tkinter as tk
+from PyDictionary import PyDictionary
+
+
+dictionary =PyDictionary()
+root=tk.Tk()
+root.title("dictionary")
+width=200
+height=520
+root.geometry=("2000x520")
+
+
+
+
+
+def dict():
+    meaning.config( text=dictionary.meaning(word.get()) ['Noun'][0])
+
+
+Label(root, text="DICTIONARY",font="arial 20",fg="Black",bg="blue").pack(pady=10)
+
+
+
+
+frame1=Frame(root)
+Label(frame1, text="Typeword:",font="arial",fg="green",).pack(side=LEFT)
+word=Entry(frame1,font="arial 15",fg="blue")
+word.pack(pady=10)
+frame1.pack(pady=10)
+
+
+frame2=Frame(root)
+Label(frame2, text="Meaning:",font="arial",fg="green").pack(side=LEFT)
+meaning=Label(frame2,text="",font="arial",fg="black")
+meaning.pack(pady=10)
+frame2.pack()
+
+Button(root,text="SUBMIT",font='elephant 15',fg="black",bg="light blue",command=dict).pack()
+
+root.mainloop()
